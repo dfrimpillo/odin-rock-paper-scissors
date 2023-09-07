@@ -1,0 +1,16 @@
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+}
+
+#buttons img {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    border: 2px solid rgb(230, 224, 224);
+    box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+    -webkit-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+    -moz-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+}
