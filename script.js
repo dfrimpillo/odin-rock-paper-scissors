@@ -8,17 +8,29 @@ function getComputerChoice() {
 
     const computerSelection = getComputerChoice();
     const displayResult = document.getElementById('result');
-  
+    const displayPlayerChoice = document.getElementById('playerImg');
+    const displayCompChoice = document.getElementById('compImg');
+
+    const choiceImages = {
+      rock: 'rock.png',
+      paper: 'paper.png',
+      scissors: 'scissors.png',
+    };
+
+    displayPlayerChoice.src = choiceImages[playerSelection];
+    displayCompChoice.src = choiceImages[computerSelection];
+    
     if (playerSelection === computerSelection) {
         displayResult.textContent = "It's a draw";
+        
     } else if (
       (playerSelection === "rock" && computerSelection === "scissors") ||
       (playerSelection === "paper" && computerSelection === "rock") ||
       (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        displayResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`;
+        displayResult.textContent = `You win!`;
     } else {
-        displayResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
+        displayResult.textContent = `You lose!`;
     }
   }
   

@@ -1,3 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background-color: aliceblue;
+    font-size: 32px;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+    flex-direction: row;
+}
+
+.imgContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    width: 300px;
+    height: 500px;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+.imgContainer img {
+    width: 150px;
+    height: 150px;
+}
+
 #buttons {
     display: flex;
     justify-content: center;
@@ -17,4 +55,19 @@
     box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
     -webkit-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
     -moz-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+}
+
+#result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 28px;
 }
