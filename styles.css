@@ -41,6 +41,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 35px;
+    margin: 30px;
 }
 
 #buttons img {
@@ -57,11 +58,33 @@ body {
     -moz-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
 }
 
-#result {
+.middle {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 40px;
+    flex-direction: column;
+}
+
+#score {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 60px;
+}
+
+#winner {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#result {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
 }
 
 .title {
@@ -70,4 +93,25 @@ body {
     align-items: center;
     flex-direction: column;
     font-size: 28px;
+}
+
+#reset {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#reset img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgb(230, 224, 224);
+    cursor: pointer;
+    padding: 10px;
+    
+}
+
+#reset img:hover {
+    box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+    -webkit-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
+    -moz-box-shadow: 4px 6px 15px 1px rgba(107,96,96,0.66);
 }

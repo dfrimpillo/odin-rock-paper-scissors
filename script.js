@@ -13,8 +13,7 @@ function playRound(playerSelection) {
 
     const computerSelection = getComputerChoice();
     const displayResult = document.getElementById('result');
-    const displayPlayerChoice = document.getElementById('playerImg');
-    const displayCompChoice = document.getElementById('compImg');
+
 
     const choiceImages = {
       rock: 'rock.png',
@@ -70,21 +69,16 @@ function gameOver () {
 
 
 function scoreUpdate(){
-    const displayPlayerScore = document.getElementById('playerScore');
-    const displayCompScore = document.getElementById('computerScore');
-
-
     displayPlayerScore.textContent = `Player: ${playerScore}`;
     displayCompScore.textContent = `Computer: ${computerScore}`;
 }
 
 
 function gameWinner() {
-  const displayWinner = document.getElementById('winner')
   if (playerScore > computerScore){
-    displayWinner.textContent = "Player wins";
+    displayWinner.textContent = "Player wins, click the reset button to play again";
   } else {
-    displayWinner.textContent = "Computer wins";
+    displayWinner.textContent = "Computer wins, click the reset button to play again";
   }
 }
 
@@ -103,3 +97,32 @@ function disableButtons() {
       button.removeEventListener('click', clickHandler);
   });
 }
+
+const restart = document.getElementById('reset');
+
+restart.addEventListener('click', function() {
+  playerScore = 0;
+  computerScore = 0;
+  roundWinner = '';
+
+  displayResult.textContent = '';
+  displayWinner.textContent = '';
+
+  displayPlayerChoice.src = '';
+  displayCompChoice.src = '';
+
+
+  displayPlayerScore.textContent = 'Player: 0';
+  displayCompScore.textContent = 'Computer: 0';
+
+  btn.forEach(button => {
+    button.addEventListener('click', clickHandler);
+  });
+});
+
+const displayResult = document.getElementById('result');
+const displayWinner = document.getElementById('winner');
+const displayPlayerChoice = document.getElementById('playerImg');
+const displayCompChoice = document.getElementById('compImg');
+const displayPlayerScore = document.getElementById('playerScore');
+const displayCompScore = document.getElementById('computerScore');
