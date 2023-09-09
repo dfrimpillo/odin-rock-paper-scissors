@@ -37,27 +37,37 @@ function playRound(playerSelection) {
         displayResult.textContent = `You win!`;
         playerScore++;
         roundWinner = 'player';
+        if (playerScore == 5){
+          
+          gameOver();
+        }
     } else {
         displayResult.textContent = `You lose!`;
         computerScore++;
         roundWinner = 'computer'
+        if (computerScore == 5){
+          
+          gameOver();
+        }
     }
     scoreUpdate();
-    gameOver();
+
   }
   
   const btn = document.querySelectorAll('#buttons img');
 
-btn.forEach(button => {
-  button.addEventListener('click', function() {
-    const playerSelection = button.className;
-    playRound(playerSelection);
-  });
-});
 
 function gameOver () {
-  return playerScore === 5 || computerScore === 5;
+
+  if (playerScore === 5 || computerScore === 5){
+    gameWinner();
+    disableButtons()
+    return true;
+  }
+  return false;
+
 }
+
 
 function scoreUpdate(){
     const displayPlayerScore = document.getElementById('playerScore');
@@ -68,3 +78,28 @@ function scoreUpdate(){
     displayCompScore.textContent = `Computer: ${computerScore}`;
 }
 
+
+function gameWinner() {
+  const displayWinner = document.getElementById('winner')
+  if (playerScore > computerScore){
+    displayWinner.textContent = "Player wins";
+  } else {
+    displayWinner.textContent = "Computer wins";
+  }
+}
+
+
+function clickHandler() {
+  const playerSelection = this.className;
+  playRound(playerSelection);
+}
+
+btn.forEach(button => {
+  button.addEventListener('click', clickHandler);
+});
+
+function disableButtons() {
+  btn.forEach(button => {
+      button.removeEventListener('click', clickHandler);
+  });
+}
